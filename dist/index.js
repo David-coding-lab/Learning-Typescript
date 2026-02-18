@@ -90,4 +90,37 @@ function kgToLbs(weight) {
         return parseInt(weight) * 22;
 }
 console.log(kgToLbs);
+let UiWidgetApp = {
+    drag() {
+        return '0.2';
+    },
+    resize() {
+        return 2.5;
+    },
+};
+console.log(UiWidgetApp);
+// Literal Types
+// This helps us limit the values we can assign to a variable
+let hisName = 'jonny';
+let goods = 50;
+console.log(goods, hisName);
+// Nullable Types
+function greet(name) {
+    if (name)
+        return name.toUpperCase();
+    else
+        return 'Hola';
+}
+greet('Dave');
+// Optional Chaining    
+// This helps use the optional property access operator
+function makeReceipt(customerName, transactionId) {
+    return customerName && transactionId !== undefined ? {
+        message: `Transaction Receipt( txt ${transactionId}) total is summed bellow`,
+        date: new Date,
+        goodsType: 'Grocery'
+    } : null;
+}
+console.log(makeReceipt('Andrew Bay', 1003342)?.message);
+// the (?) operator allows us to chain conditions so our code doesn't break unintentionally
 //# sourceMappingURL=index.js.map
