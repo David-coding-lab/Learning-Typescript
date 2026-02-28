@@ -73,49 +73,67 @@ function App() {
       </div>
 
       <div className='side-bar'>
-        <div>
+        <div className='search'>
           <input
-          type='text'
-          placeholder='Search location...'
-          className='search-bar'
-        />
-        <FiSearch size={20} />
+            type='text'
+            className='search-bar'
+            value='Search Location'
+          />
+          <FiSearch
+            color='white'
+            size={20}
+          />
         </div>
 
-        <p>weather details</p>
+        <p className='title'>weather details</p>
 
-        <div>
-          <p>Thunder Storm With Light Drizzle</p>
+        <div className='forecast'>
+          <p className='weather-headline'>Thunder Storm With Light Drizzle</p>
 
-          <span>
+          <span className='weather-wrapper'>
            <text>Temp max</text> 
-           <img src={hotWeatherIcon} width={'20em'} />
+           <span className='temp-container'>
+             <text>19°</text> 
+             <img src={hotWeatherIcon} width={'20em'} />
+           </span>
           </span>
 
-          <span>
+          <span className='weather-wrapper'>
            <text>Temp Min</text> 
-           <img src={coldWeatherIcon} width={'20em'} />
+           <span className='temp-container'>
+              <text>19°</text> 
+              <img src={coldWeatherIcon} width={'20em'} />
+           </span>
           </span>
 
-          <span>
+          <span className='weather-wrapper'>
            <text>Humidity</text> 
-           <img src={rainyWeatherIcon} width={'20em'} />
+           <span className='temp-container'>
+              <text>58%</text> 
+              <img src={rainyWeatherIcon} width={'20em'} />
+           </span>
           </span>
 
-          <span>
+          <span className='weather-wrapper'>
            <text>Cloudy</text> 
-           <img src={cloudyWeatherIcon} width={'20em'} />
+           <span className='temp-container'>
+              <text>85%</text> 
+              <img src={cloudyWeatherIcon} width={'20em'} />
+           </span>
           </span>
 
-          <span>
+          <span className='weather-wrapper'>
            <text>Windy</text> 
-           <img src={windyWeatherIcon} width={'20em'} />
+           <span className='temp-container'>
+              <text>43km/h</text> 
+              <img src={windyWeatherIcon} width={'20em'} />
+           </span>
           </span>
         </div>
 
-        <div></div>
+        <div className='divider'></div>
 
-        <div>
+        <div className='forecast-container'>
           <p>Todays Weather Forecast...</p>
 
           <span>
