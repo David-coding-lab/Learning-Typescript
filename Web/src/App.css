@@ -79,7 +79,7 @@ body {
   position: absolute;
   top: 0;
   right: 0;
-  width: 40%;
+  width: 30%;
   height: 100%;
   backdrop-filter: blur(19px); 
   -webkit-backdrop-filter: blur(19px);
@@ -89,6 +89,7 @@ body {
   border-bottom-left-radius: 20px;
   padding-left: 30px;
   padding-top: 30px;
+  overflow-y: auto;
 }
 
 .search{
@@ -152,9 +153,41 @@ body {
   background: white;
   margin-block: 50px;
 }
+.forecast-container{
+ padding-bottom: 10px;
+}
 
 .forecast-container > p{
   font-size: 18px;
   font-weight: 700;
   color: white;
+}
+
+.forecast-wrapper{
+  display: flex;
+  align-items: center;
+  width: 400px;
+  margin-bottom: 40px;
+
+  span{
+    font-size: 18px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    margin-left: 50px;
+    margin-right: auto;
+    p{
+      padding: 0;
+      margin: 0;
+      font-size: 20px;
+      color: white;
+    }
+
+  }
+
+  p{
+    font-size: 22px;
+    color: white
+  }
 }

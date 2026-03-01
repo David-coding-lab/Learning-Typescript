@@ -136,26 +136,12 @@ function App() {
         <div className='forecast-container'>
           <p>Todays Weather Forecast...</p>
 
-          <span>
-            <img src={snowyWeatherIcon} alt="Snowy Weather" width={'20em'} />
-            <span>
-              <p>9:00</p>
-              <p>Snow</p>
-            </span>
-
-            <p>19°</p>
-          </span>
-          <span>
-            <img src={snowyWeatherIcon} alt="Snowy Weather" width={'20em'} />
-            <span>
-              <p>9:00</p>
-              <p>Snow</p>
-            </span>
-
-            <p>19°</p>
-          </span>
-          <span>
-            <img src={snowyWeatherIcon} alt="Snowy Weather" width={'20em'} />
+          <span className='forecast-wrapper'>
+            <img
+              src={snowyWeatherIcon}
+              alt="Snowy Weather"
+              width={'35em'}
+            />
             <span>
               <p>9:00</p>
               <p>Snow</p>
