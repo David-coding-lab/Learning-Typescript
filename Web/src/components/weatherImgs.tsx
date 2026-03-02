@@ -44,6 +44,15 @@ type Image = {
         weather: 'windy',
         img: 'https://images.unsplash.com/photo-1531420780994-e74b1a80952e?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTh8fHdpbmR5fGVufDB8fDB8fHww'
     },
+    {
+        weather: 'clear',
+        img: 'https://plus.unsplash.com/premium_photo-1733317236155-b0e1a2930f37?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8Y2xlYXIlMjB3ZWF0aGVyfGVufDB8fDB8fHww'
+    },
+    {
+        weather: 'clear',
+        img: 'https://images.unsplash.com/photo-1691848746386-d5de9f5c05a2?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Y2xlYXIlMjB3ZWF0aGVyfGVufDB8fDB8fHww'
+    },
+
 ] 
 
 export default weatherImages

@@ -8,7 +8,7 @@ export default function FetchImg(weather: string) {
 
     for (let index = 0; index < weatherImages.length; index++) {
         const weatherImgUrl = weatherImages[index];
-        if(weatherImgUrl.weather === weatherType){
+        if(weatherImgUrl.weather.toLocaleLowerCase() === weatherType.toLocaleLowerCase()){
             imgs.push(weatherImgUrl.img)
         }
     }
