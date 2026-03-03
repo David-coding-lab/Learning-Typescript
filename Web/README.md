@@ -1,6 +1,21 @@
-# React + TypeScript + Vite
+# Weather App (React + TypeScript + Vite)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A dynamic weather application built with React and TypeScript, featuring real-time data from WeatherAPI and dynamic background transitions.
+
+## Key Features
+- **Real-time Weather**: Fetches current weather data and forecasts.
+- **Dynamic Backgrounds**: Background images change based on current weather conditions (e.g., Sunny, Rain, Overcast).
+- **Favicon Integration**: Custom favicon setup in the root.
+- **Error Handling**: Custom UI for "Location Not Found" and "Network Error" popups.
+- **Smooth Transitions**: Visual transitions between different weather-state views.
+
+## Recent Changes
+- **Favicon added**: Integrated `favicon.png` into the `public` folder and linked it in `index.html`.
+- **Weather Condition Matching**: Updated `weatherImgs.tsx` to match exact WeatherAPI condition strings (e.g., "Partly cloudy", "Overcast", "Mist").
+- **Error UI**: Implemented a global error popup for invalid location searches and fetch failures.
+- **Hook Optimization**: Fixed "Invalid Hook Call" by ensuring hooks are only called at the top level of components.
+
+## Development Setup
 
 Currently, two official plugins are available:
 

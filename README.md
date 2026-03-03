@@ -15,7 +15,9 @@ Throughout this process, I've gained hands-on experience with:
 
 ### 🛠 Implemented Features
 - **Dynamic Weather Search:** Real-time lookup for global weather conditions.
-- **Background Transitions:** Adaptive UI backgrounds that change based on the weather condition.
+- **Background Transitions:** Adaptive UI backgrounds that change based on exact WeatherAPI condition matching (e.g., "Overcast", "Mist").
+- **Error Handling:** Custom UI popups for "Location Not Found" and "Network Error" to improve user experience.
+- **Favicon Integration:** Custom project favicon for a professional look.
 - **Detailed Forecasts:** Displaying temperature, humidity, wind speed, and cloud coverage.
 - **Responsive Layout:** A clean, modern UI with a side-bar for detailed metrics.
 

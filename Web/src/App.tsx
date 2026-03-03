@@ -15,10 +15,12 @@ import type { WeatherData } from './types/weather'
 
 function App() {
   const [weather, setWeather] = useState<WeatherData>()
+  const [inputValue, setInputValue] = useState('')
   const [currentBg, setCurrentBg] = useState('')
   const [prevBg, setPrevBg] = useState('')
   const [isTransitioning, setIsTransitioning] = useState(false)
   const [loading, setLoading] = useState(true)
+  const [error, setError] = useState<string | null>(null)
 
   useEffect(() => {
     const newImg = FetchImg(weather?.current.condition.text || 'sunny')
@@ -48,9 +50,32 @@ function App() {
       .catch(error => {
         console.error('Error fetching weather data:', error)
         setLoading(false)
-      })
+    })
   }, [])
   
+  function handleSearch() {
+    if (inputValue.trim() === '') return
+
+    setLoading(true)
+    setError(null)
+    fetchWeather(inputValue)
+      .then(data => {
+        if (!data || !data.current) {
+          setError('Location not found. Please try another city.')
+          setLoading(false)
+          return
+        }
+        setWeather(data)
+        console.log(data)
+        // setLoading(false)
+        // the loading state will be set to false after the background image transition is complete in the previous useEffect
+      })
+      .catch(err => {
+        console.error('Error fetching weather data:', err)
+        setError('Network error or invalid location. Please check your connection.')
+        setLoading(false)
+    })
+  }
 
   return (
     <div className='container' id='container'>
@@ -59,6 +84,16 @@ function App() {
           <div className='spinner'></div>
         </div>
       )}
+
+      {error && (
+        <div className='error-popup'>
+          <div className='error-content'>
+            <p>{error}</p>
+            <button onClick={() => setError(null)}>Close</button>
+          </div>
+        </div>
+      )}
+
       <div className='blurred-background-layer'>
         {prevBg && (
           <div
@@ -86,11 +121,11 @@ function App() {
         />
        
         <div className='weather-Details'>
-          <p className='temperature'>16°</p>
+          <p className='temperature'>{weather?.current.temp_c || 0}°</p>
 
           <span className='location-time'>
-            <span className='location'>London</span>
-            <span className='time'>06:09 - Monday, 9 Sep ‘23</span>
+            <span className='location'>{weather?.location.name || 'London'}</span>
+            <span className='time'>{weather?.location.localtime || '06:09 - Monday, 9 Sep ‘23'}</span>
           </span>
 
           <img className='weatherIcon' src={cloudyWeatherIcon} />
@@ -102,12 +137,19 @@ function App() {
           <input
             type='text'
             className='search-bar'
-            value='Search Location'
+            placeholder='Search Location'
+            value={inputValue}
+            onChange={e => setInputValue(e.target.value)}
           />
-          <FiSearch
-            color='white'
-            size={20}
-          />
+          <div
+            style={{cursor: 'pointer'}}
+            onClick={() => handleSearch()}
+          >
+            <FiSearch
+              color='white'
+              size={20}
+            />
+          </div>
         </div>
 
         <p className='title'>weather details</p>
